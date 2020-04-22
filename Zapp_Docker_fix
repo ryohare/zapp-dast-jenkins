@@ -1,0 +1,11 @@
+FROM owasp/zap2docker-weekly
+
+USER root
+RUN apt-get update
+RUN apt-get install locales
+RUN locale-gen en_US.UTF-8
+RUN dpkg-reconfigure locales
+USER zap
+
+ENV LC_ALL=en_US.utf-8
+ENV LANG=en_US.utf-8
